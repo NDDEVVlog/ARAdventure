@@ -81,7 +81,8 @@ public class SessionManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("[Addressables] Failed to load Session Data!");
+                // THÊM DÒNG NÀY ĐỂ XEM LỖI LÀ GÌ
+                Debug.LogError($"[Addressables] Failed to load Session Data! Error: {handle.OperationException}");
             }
             refreshBtn.interactable = true;
         };

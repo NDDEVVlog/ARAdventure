@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: LevelData
   m_GUID: bf741f58ca7f84f42b8ad6268e621557
   m_SerializeEntries:
+  - m_GUID: 164d8c331be0a514eb54afa050aad18a
+    m_Address: Assets/SO/GameData/Level6.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SessionData
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 520a08bb1f7e4314295bfac282d21d6e
     m_Address: Assets/SO/GameData/Level4.asset
     m_ReadOnly: 0
@@ -31,6 +37,12 @@ MonoBehaviour:
     m_Address: Assets/SO/GameData/ada-wong.png
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 632cfdedc1f12534d99d1140e86c174c
+    m_Address: Assets/SO/GameData/Level8.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SessionData
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8849c04656ed09540a2a48a21c66e07b
     m_Address: Assets/SO/GameData/Level5.asset
@@ -51,6 +63,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fa963391d0cc93e43997e33d0d66885e
     m_Address: Assets/SO/GameData/Level2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SessionData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe8579b703d67d0438936ff20969e957
+    m_Address: Assets/SO/GameData/Level7Huh.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - SessionData
