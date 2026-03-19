@@ -1,0 +1,82 @@
+/* Gốc của Card */
+.card {
+    background-color: #1e293b;
+    border-radius: 20px;
+    padding: 16px;
+    margin-bottom: 20px;
+    /* Hiệu ứng đổ bóng nhẹ cho mobile */
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Ảnh Thumbnail */
+.thumbnail {
+    height: 180px;
+    border-radius: 15px;
+    background-color: #334155;
+    -unity-background-scale-mode: scale-and-crop;
+}
+
+/* Chữ nghĩa */
+.card-title {
+    font-size: 20px;
+    color: white;
+    margin-top: 12px;
+    -unity-font-style: bold;
+}
+
+.card-sub {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+.card-desc {
+    color: #cbd5e1;
+    margin-top: 8px;
+    font-size: 13px;
+    white-space: normal; /* Cho phép xuống dòng */
+}
+
+/* Thanh Progress khi download */
+.progress-bar {
+    height: 6px;
+    background-color: #0f172a;
+    border-radius: 3px;
+    margin-top: 12px;
+    overflow: hidden;
+    display: none; /* Mặc định ẩn, hiện bằng code khi download */
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #3b82f6;
+    width: 0%;
+}
+
+/* Phần chân Card (Rating & Button) */
+.card-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.rating {
+    color: #fbbf24; /* Màu vàng sao */
+    font-size: 16px;
+    -unity-font-style: bold;
+}
+
+.play-btn {
+    background-color: #3b82f6;
+    color: white;
+    border-radius: 12px;
+    padding: 10px 24px;
+    border-width: 0;
+    transition-duration: 0.1s; /* Hiệu ứng bấm */
+}
+
+.play-btn:active {
+    background-color: #2563eb;
+    scale: 0

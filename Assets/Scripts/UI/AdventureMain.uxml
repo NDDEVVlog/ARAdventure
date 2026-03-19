@@ -1,0 +1,40 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/UI/AdventureStyles.uss?fileID=7433441132597879392&amp;guid=eaa664a9200fd154fadacdf70fe01dfb&amp;type=3#AdventureStyles"/>
+    <ui:VisualElement class="root">
+        <ui:VisualElement name="LoadingOverlay" style="position: absolute; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 100; align-items: center; justify-content: center; display: none;">
+            <ui:Label text="Loading Data..." style="color: white; font-size: 20px;"/>
+        </ui:VisualElement>
+        <ui:VisualElement class="header">
+    <!-- Hàng tiêu đề: Nút Back - Tiêu đề - Nút Filter -->
+            <ui:VisualElement class="header-top-row">
+                <ui:Button name="BackBtn" class="icon-btn" text="←" />
+                <ui:Label text="Select Adventure" class="title" />
+                <ui:Button name="RefreshBtn" class="icon-btn" text="≡" />
+            </ui:VisualElement>
+
+            <!-- Thanh Search ổn định -->
+            <ui:VisualElement class="search-container">
+                <ui:VisualElement class="search-icon" /> <!-- Đây là cái kính lúp -->
+                <ui:TextField name="SearchInput" placeholder-text="Search by name or location" class="search-input" />
+            </ui:VisualElement>
+
+            <!-- Hàng Filter -->
+            <ui:ScrollView horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="Hidden" mode="Horizontal" class="filter-row">
+                <ui:Button text="★ Rating 4.5+" class="filter-btn active" />
+                <ui:Button text="🕒 Newest" class="filter-btn" />
+                <ui:Button text="🧭 Classic" class="filter-btn" />
+            </ui:ScrollView>
+        </ui:VisualElement>
+        <ui:ScrollView name="MainScroll" vertical-scroller-visibility="Hidden" class="scroll-view"/>
+        <ui:VisualElement class="bottom-nav">
+            <ui:VisualElement class="nav-item active">
+                <ui:VisualElement name="HomeIcon" class="nav-icon"/>
+                <ui:Label text="HOME" class="nav-text"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="nav-item">
+                <ui:VisualElement name="AchieveIcon" class="nav-icon"/>
+                <ui:Label text="ACHIEVE" class="nav-text"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

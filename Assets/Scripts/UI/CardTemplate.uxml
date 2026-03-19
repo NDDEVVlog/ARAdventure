@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/UI/AdventureStyles.uss?fileID=7433441132597879392&amp;guid=eaa664a9200fd154fadacdf70fe01dfb&amp;type=3#AdventureStyles"/>
+    <Style src="project://database/Assets/Scripts/UI/Card.uss?fileID=7433441132597879392&amp;guid=185cd1dbec97a47438cc8525432f37a1&amp;type=3#Card"/>
+    <ui:VisualElement class="card">
+        <ui:VisualElement name="Image" class="thumbnail"/>
+        <ui:Label name="Title" text="Adventure Name" class="card-title"/>
+        <ui:Label name="Sub" text="Location" class="card-sub"/>
+        <ui:Label name="Desc" text="Description text goes here..." class="card-desc"/>
+        <ui:VisualElement name="ProgressBar" style="display: none; height: 6px; background-color: rgb(51, 65, 85); border-radius: 3px; margin-top: 10px; overflow: hidden;">
+            <ui:VisualElement name="ProgressFill" style="width: 0%; height: 100%; background-color: rgb(59, 130, 246);"/>
+        </ui:VisualElement>
+        <ui:VisualElement class="card-footer">
+            <ui:Label name="Rating" text="&#11088; 4.5" class="rating"/>
+            <ui:Button name="PlayBtn" text="Download" class="play-btn"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

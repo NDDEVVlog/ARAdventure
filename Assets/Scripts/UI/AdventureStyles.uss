@@ -1,0 +1,117 @@
+.root {
+    flex-grow: 1;
+    background-color: #0f172a;
+}
+
+/* Layout tổng thể */
+.header {
+    padding: 20px 16px 10px 16px;
+    background-color: #0f172a;
+    flex-shrink: 0; /* Đảm bảo header không bị ScrollView bóp méo */
+}
+
+/* Hàng trên cùng */
+.header-top-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 22px;
+    color: white;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+.icon-btn {
+    background-color: transparent;
+    border-width: 0;
+    color: white;
+    font-size: 24px;
+}
+
+/* THANH SEARCH CHUẨN FIGMA */
+.search-container {
+    flex-direction: row;
+    align-items: center;
+    background-color: #1e293b; /* Màu nền tối */
+    border-radius: 25px;       /* Bo tròn cực mạnh */
+    height: 48px;
+    padding: 0 15px;
+    margin-bottom: 15px;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-image: url('project://database/Assets/UI/Icons/search_icon.png'); /* Kéo icon kính lúp vào đây */
+    -unity-background-image-tint-color: #64748b; /* Màu icon xám nhạt */
+}
+
+.search-input {
+    flex-grow: 1;
+    background-color: transparent;
+    border-width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fix lỗi lệch chữ bên trong TextField của Unity */
+.search-input #unity-text-input {
+    background-color: transparent;
+    border-width: 0;
+    color: #94a3b8;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Loại bỏ cái nhãn (label) mặc định của TextField nếu có */
+.search-input .unity-base-field__label {
+    display: none;
+    width: 0;
+}
+
+/* Hàng Filter */
+.filter-row {
+    height: 40px;
+    margin-top: 5px;
+}
+
+.filter-btn {
+    background-color: #1e293b;
+    border-color: #334155;
+    border-width: 1px;
+    border-radius: 20px;
+    color: #94a3b8;
+    padding: 5px 20px;
+    margin-right: 8px;
+    font-size: 14px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.filter-btn.active {
+    background-color: #3b82f6;
+    color: white;
+    border-width: 0;
+}
+/* ScrollView Area */
+.scroll-view { flex-grow: 1; padding: 0 15px; }
+
+/* Bottom Navigation */
+.bottom-nav {
+    height: 85px;
+    background-color: #020617;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 20px; /* Chừa chỗ cho vạch dưới của điện thoại tràn viền */
+}
+
+.nav-item { align-items: center; justify-content: center; opacity: 0.5; }
+.nav-item.active { opacity: 1; }
+.nav-icon { width: 26px; height: 26px; margin-bottom: 4px; }
+.nav-text { color: white; font-size: 11px; }
