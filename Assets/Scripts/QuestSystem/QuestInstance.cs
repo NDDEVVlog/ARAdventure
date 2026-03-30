@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Diagnostics;
+using UnityEngine;
 
 public class QuestInstance
 {
@@ -41,6 +43,7 @@ public class QuestInstance
             if (step.IsCompleted)
             {
                 currentStep++;
+                UnityEngine.Debug.Log("Step completed, moving to next. Current step: " + currentStep);
 
                 if (currentStep >= steps.Count)
                     Complete();

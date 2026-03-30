@@ -8,6 +8,8 @@ public class StepInstance
 
     public bool IsCompleted => conditions.All(c => c.IsDone);
 
+    private bool _hasTriggeredComplete = false; 
+
     public StepInstance(StepDefinition def)
     {
         this.def = def;
@@ -37,8 +39,9 @@ public class StepInstance
 
     public void Update()
     {
-        if (!IsCompleted) return;
+        if (!IsCompleted || _hasTriggeredComplete) return; 
 
+        _hasTriggeredComplete = true;
         Stop();
         Trigger(def.onCompleteEvents);
     }

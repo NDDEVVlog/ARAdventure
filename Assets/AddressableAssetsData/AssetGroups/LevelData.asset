@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: LevelData
   m_GUID: bf741f58ca7f84f42b8ad6268e621557
   m_SerializeEntries:
+  - m_GUID: 057f3c69c65cbcc4cbe896e7284b3945
+    m_Address: Assets/Scenes/ARTestLevelQuest/ARTestLevel.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SessionData
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 164d8c331be0a514eb54afa050aad18a
     m_Address: Assets/SO/GameData/Level6.asset
     m_ReadOnly: 0
@@ -37,6 +43,12 @@ MonoBehaviour:
     m_Address: Assets/SO/GameData/ada-wong.png
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d6e26cefd278b34abe8065f905007b7
+    m_Address: Assets/Scenes/ARTest.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SessionData
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 632cfdedc1f12534d99d1140e86c174c
     m_Address: Assets/SO/GameData/Level8.asset

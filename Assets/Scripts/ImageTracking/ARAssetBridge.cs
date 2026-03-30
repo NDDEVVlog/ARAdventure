@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using System.Collections;
+using Unity.VisualScripting; // Thêm namespace này để dùng CustomEvent
 
 [AddComponentMenu("AR Bridge/AR Asset Bridge")]
 public class ARAssetBridge : MonoBehaviour
@@ -14,51 +15,61 @@ public class ARAssetBridge : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    // Hàm gọi từ Visual Scripting
-    public void LoadAndAttachAsync(string addressableKey, Transform parent)
+    /// <summary>
+    /// Load Asset và kích hoạt một Custom Event khi xong
+    /// </summary>
+    /// <param name="onCompletedEventName">Tên Event sẽ gọi trong Visual Scripting khi load xong</param>
+    public void LoadAndAttachAsync(string addressableKey, Transform parent, Vector3 localPos, Vector3 localRotationEuler, Vector3 localScale, string onCompletedEventName)
     {
         if (string.IsNullOrEmpty(addressableKey) || parent == null) return;
 
-        // KIỂM TRA CHẶN: Nếu đã có con rồi thì không load nữa (Sửa lỗi 353 child)
         if (parent.childCount > 0)
         {
-            Debug.LogWarning($"[ARAssetBridge] {addressableKey} đã được load trên parent này. Bỏ qua.");
+            Debug.LogWarning($"[ARAssetBridge] {addressableKey} đã tồn tại. Bỏ qua.");
+            // Nếu đã có rồi, vẫn trigger event để Visual Scripting biết mà chạy tiếp animation
+            CustomEvent.Trigger(gameObject, onCompletedEventName, parent.GetChild(0).gameObject);
             return;
         }
 
-        StartCoroutine(LoadAndAttachCoroutine(addressableKey, parent));
+        StartCoroutine(LoadAndAttachCoroutine(addressableKey, parent, localPos, localRotationEuler, localScale, onCompletedEventName));
     }
 
-    private IEnumerator LoadAndAttachCoroutine(string key, Transform parent)
+    private IEnumerator LoadAndAttachCoroutine(string key, Transform parent, Vector3 pos, Vector3 rot, Vector3 scale, string eventName)
     {
-        Debug.Log($"[ARAssetBridge] Đang bắt đầu load: {key}");
-        
         AsyncOperationHandle<GameObject> handle = Addressables.LoadAssetAsync<GameObject>(key);
-
         yield return handle;
 
         if (handle.Status == AsyncOperationStatus.Succeeded)
         {
-            GameObject prefab = handle.Result;
-            if (prefab != null)
-            {
-                // Instantiate và căn chỉnh
-                GameObject instance = Instantiate(prefab, parent);
-                instance.transform.localPosition = Vector3.zero;
-                instance.transform.localRotation = Quaternion.identity;
+            GameObject instance = Instantiate(handle.Result, parent);
             
-                Debug.Log($"[ARAssetBridge] SUCCESS: Đã hiển thị {key}. Child count hiện tại: {parent.childCount}");
+            instance.transform.localPosition = pos;
+            instance.transform.localEulerAngles = rot;
+            instance.transform.localScale = (scale == Vector3.zero) ? Vector3.one : scale;
+
+            Debug.Log($"[ARAssetBridge] Loaded: {key}");
+
+            // GỬI ĐỐI TƯỢNG VỀ VISUAL SCRIPTING
+            // Arg0 chính là GameObject vừa được tạo ra
+            if (!string.IsNullOrEmpty(eventName))
+            {
+                CustomEvent.Trigger(gameObject, eventName, instance);
             }
         }
         else
         {
-            Debug.LogError($"[ARAssetBridge] FAILED: Không tìm thấy Key '{key}'. Hãy kiểm tra bảng Addressables và bấm Build Content!");
+            Debug.LogError($"[ARAssetBridge] Lỗi load key: {key}");
         }
     }
 
-    // Hàm ẩn hiện (có thể gọi từ Visual Scripting khi Lost/Found)
-    public void SetVisibility(GameObject target, bool visible)
+    // --- CÁC HÀM BỔ TRỢ ---
+    public void SetLocalScale(GameObject target, Vector3 scale)
     {
-        if (target != null) target.SetActive(visible);
+        if (target != null) target.transform.localScale = scale;
+    }
+
+    public void SetLocalRotation(GameObject target, Vector3 eulerAngles)
+    {
+        if (target != null) target.transform.localEulerAngles = eulerAngles;
     }
 }

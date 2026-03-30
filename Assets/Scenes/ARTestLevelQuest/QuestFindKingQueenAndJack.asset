@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b45d2105f89a4ca45a7fc3dc8e18fc96, type: 3}
+  m_Name: QuestFindKingQueenAndJack
+  m_EditorClassIdentifier: Assembly-CSharp::QuestDefinition
+  questId: find-jqk
+  isSequential: 0
+  steps:
+  - stepId: find-Ra-ball
+    conditions:
+    - {fileID: 11400000, guid: ccd47619f8647a342957b4a703199a95, type: 2}
+    onStartEvents:
+    - start-ra-balls
+    onCompleteEvents:
+    - found-ra-balls
+  - stepId: enter-password
+    conditions:
+    - {fileID: 11400000, guid: c7d2aa910c0feec4f96b8a0464d3e641, type: 2}
+    onStartEvents:
+    - start-pass
+    onCompleteEvents:
+    - pass-true
+  - stepId: JQK
+    conditions:
+    - {fileID: 11400000, guid: 3be2211e591f8b24b92e2a897db6d149, type: 2}
+    onStartEvents: []
+    onCompleteEvents:
+    - JQK-Found
+  onStartEvents: []
+  onCompleteEvents: []

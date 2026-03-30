@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0551a2653f69e6748b66b7104c619e65, type: 3}
-  m_Name: ClickMouse5TimesConditions
+  m_Name: Passwork
   m_EditorClassIdentifier: Assembly-CSharp::ExternalConditionSO
-  eventName: ClickMouse5TimesConditions
+  eventName: passwork-true

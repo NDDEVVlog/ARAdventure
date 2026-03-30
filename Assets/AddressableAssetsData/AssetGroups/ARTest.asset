@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: ARTest
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: ARTest
+  m_GUID: bbd882ea480f9cb41a796fc2df1785b1
+  m_SerializeEntries:
+  - m_GUID: 4755b35b590504809a7525fd2109c2e2
+    m_Address: ARTest
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64172e045ff1ee147b08f075877ffc46
+    m_Address: Capy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 963e4f5db053e224593acc531902b651
+    m_Address: Assets/Scripts/ImageTracking/XRTEST/ReferenceImageLibrary.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 05b0a55ecfa3aaf4089e95f4c6687f55, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c7647b3b4c3ddb84e97877e7ecf6a82f, type: 2}
+    - {fileID: 11400000, guid: 7015432f01530484faf5722a50583dcc, type: 2}
